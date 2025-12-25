@@ -47,8 +47,5 @@ function App() {
     </>
   );
 }
-    /* <ProfileCard name="Arsy" age={20} bio="I'm a software engineer." />
-      <ProfileCard name="Asya" age={22} />
-      <ProfileCard name="Arsy" age={20} /> */
 
 export default App;
