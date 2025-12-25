@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import ProfileCard from './components/ProfileCard';
+
+type Teacher = {
+  name: string;
+  age: number;
+  bio?: string;
+  id: number;
+};
+
+const teachers: Teacher[] = [
+  {
+    name: 'Arsy',
+    age: 30,
+    bio: "I'm a math teacher.",
+    id: 1,
+  },
+  {
+    name: 'Budi',
+    age: 35,
+    bio: "I'm a physics teacher.",
+    id: 2,
+  },
+  {
+    name: 'Cindy',
+    age: 28,
+    bio: "I'm a chemistry teacher.",
+    id: 3,
+  },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div style={{ display: 'flex', flexDirection: 'row', gap: '14px'}}>
+        {teachers.map((teacher) => {
+          return(
+            <ProfileCard
+              name={teacher.name}
+              age={teacher.age}
+              bio={teacher.bio}
+              key={teacher.id}
+            />
+          );
+        })}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
+    /* <ProfileCard name="Arsy" age={20} bio="I'm a software engineer." />
+      <ProfileCard name="Asya" age={22} />
+      <ProfileCard name="Arsy" age={20} /> */
 
-export default App
+export default App;
