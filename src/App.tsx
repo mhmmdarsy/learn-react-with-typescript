@@ -1,5 +1,7 @@
 import './App.css';
 import ProfileCard from './components/ProfileCard';
+import Counter from './components/Counter';
+import LikeButton from './components/LikeButton';
 
 type Teacher = {
   name: string;
@@ -31,10 +33,13 @@ const teachers: Teacher[] = [
 
 function App() {
   return (
-    <>
-      <div style={{ display: 'flex', flexDirection: 'row', gap: '14px'}}>
+    <div style={{ padding: "16px 32px", display: 'flex', flexDirection: 'column', gap: '20px'}}>
+      <Counter />
+      <LikeButton />
+
+      <div className='flex px-4 gap-4'>
         {teachers.map((teacher) => {
-          return(
+          return (
             <ProfileCard
               name={teacher.name}
               age={teacher.age}
@@ -44,7 +49,7 @@ function App() {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 
