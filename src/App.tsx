@@ -23,21 +23,22 @@ const teachers: Teacher[] = [
     bio: "I'm a physics teacher.",
     id: 2,
   },
-  {
-    name: 'Cindy',
-    age: 28,
-    bio: "I'm a chemistry teacher.",
-    id: 3,
-  },
 ];
 
 function App() {
   return (
-    <div style={{ padding: "16px 32px", display: 'flex', flexDirection: 'column', gap: '20px'}}>
+    <div
+      style={{
+        padding: '16px 32px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px',
+      }}
+    >
       <Counter />
       <LikeButton />
 
-      <div className='flex px-4 gap-4'>
+      <div className="flex px-4 gap-4">
         {teachers.map((teacher) => {
           return (
             <ProfileCard
