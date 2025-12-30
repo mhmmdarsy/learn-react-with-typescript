@@ -1,49 +1,43 @@
 import './App.css';
-import ProfileCard from './components/ProfileCard';
-import Counter from './components/Counter';
-import LikeButton from './components/LikeButton';
+// import ProfileCard from './components/ProfileCard';
+// import Counter from './components/Counter';
+// import LikeButton from './components/LikeButton';
+import { Route, Routes } from 'react-router';
+import TermsPage from './pages/TermsPage';
+import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
 
-type Teacher = {
-  name: string;
-  age: number;
-  bio?: string;
-  id: number;
-};
+// type Teacher = {
+//   name: string;
+//   age: number;
+//   bio?: string;
+//   id: number;
+// };
 
-const teachers: Teacher[] = [
-  {
-    name: 'Arsy',
-    age: 30,
-    bio: "I'm a math teacher.",
-    id: 1,
-  },
-  {
-    name: 'Budi',
-    age: 35,
-    bio: "I'm a physics teacher.",
-    id: 2,
-  },
-];
+// const teachers: Teacher[] = [
+//   {
+//     name: 'Arsy',
+//     age: 30,
+//     bio: "I'm a math teacher.",
+//     id: 1,
+//   },
+//   {
+//     name: 'Budi',
+//     age: 35,
+//     bio: "I'm a physics teacher.",
+//     id: 2,
+//   },
+// ];
 
 function App() {
   return (
-    <div>
-      <Counter />
-      <LikeButton />
-
-      <div className="flex px-4 gap-4">
-        {teachers.map((teacher) => {
-          return (
-            <ProfileCard
-              name={teacher.name}
-              age={teacher.age}
-              bio={teacher.bio}
-              key={teacher.id}
-            />
-          );
-        })}
-      </div>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
   );
 }
 
