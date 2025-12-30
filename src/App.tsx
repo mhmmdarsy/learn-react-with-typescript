@@ -27,14 +27,7 @@ const teachers: Teacher[] = [
 
 function App() {
   return (
-    <div
-      style={{
-        padding: '16px 32px',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '20px',
-      }}
-    >
+    <div>
       <Counter />
       <LikeButton />
 
